@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ person.name }}{% endblock %}
+
+{% block content %}
+    <table class="table">
+        <tr>
+            <td>Имя</td>
+            <td>{{ person.name }}</td>
+        </tr>
+        <tr>
+            <td>Год рождения</td>
+            <td>{{ person.born }}</td>
+        </tr>
+        {% if person.died %}perso
+        <tr>
+            <td>Год смерти</td>
+            <td>{{ person.died }}</td>
+        </tr>
+        {% endif %}
+        <tr>
+            <td>Фильмы</td>
+            <td>
+                {% for film in person.films %}
+                    {{ film.title }} <br>
+                {% endfor %}
+            </td>
+        </tr>
+    </table>
+{% endblock %}
