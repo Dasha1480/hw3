@@ -6,23 +6,6 @@ db = SQLAlchemy()
 
 
 
-class Genre(db.Model):
-
-    __tablename__ = "genre_types"
-
-    genre_id = db.Column('id', db.Integer, primary_key=True)
-    name = db.Column('genre_name', db.Text)
-
-    # Связь с таблицей articles через промежуточную таблицу article_tags
-    # articles = db.relationship('Article', secondary='article_tags', back_populates='tags')
-
-
-    # соединяем
-    # film_type_id = db.Column('type', db.Integer, ForeignKey('film_types.id'))
-    # film_type = db.relationship('Type')
-    # rating = db.relationship('Rating', uselist=False, primaryjoin="Film.film_id==Rating.film_id")
-
-
 class Tag(db.Model):
 
     __tablename__ = "Tags"
